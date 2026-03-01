@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Colilla de Pago</title>
+    <title>Colilla de Pago de Ferreteria San Sebastian</title>
     <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
@@ -33,15 +33,25 @@
         }
     </style>
 </head>
+@php
+    $fechaInicial = date_create($salario->FECHA);
+    $rangoFechas =
+        'Del ' .
+        date_format(date_sub($fechaInicial, date_interval_create_from_date_string('6 days')), 'Y-m-d') .
+        ' al ' .
+        $salario->FECHA;
+@endphp
 
 <body>
-
+    <img src="{{ public_path('images/FSS_Logo.jpeg') }}" alt="Logo Empresa" style="height:80px;">
     <h3>Colilla de Pago</h3>
+    <h3>Ferreteria San Sebastian</h3>
+    <h4>Cedula: 3-101-067859</h4>
 
     <p>
         <strong>Empleado:</strong> {{ $salario->empleado->NOMBRE }} {{ $salario->empleado->APELLIDO }}<br>
         <strong>Departamento:</strong> {{ $salario->empleado->departamento->DESCRIPCION }}<br>
-        <strong>Fecha:</strong> {{ $salario->FECHA }}
+        <strong>Fecha:</strong> {{ $rangoFechas }}
     </p>
 
     {{-- INGRESOS --}}

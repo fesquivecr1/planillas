@@ -64,9 +64,11 @@ class ReportePlanillaController extends Controller
                     ->queue(new ColillaPagoMail($s->empleado, $PDF));
             }
         }
+        $fechaInicial = date_create($request->fecha);
+        $rangoFechas = 'Del '.date_format(date_sub($fechaInicial, date_interval_create_from_date_string('6 days')), 'Y-m-d').' al '.$request->fecha;
 
         return view('reportes.planilla.resultado', [
-            'fecha' => $request->fecha,
+            'fecha' => $rangoFechas,
             'planilla' => $planilla,
         ]);
     }
