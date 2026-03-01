@@ -50,6 +50,7 @@
 
     <p>
         <strong>Empleado:</strong> {{ $salario->empleado->NOMBRE }} {{ $salario->empleado->APELLIDO }}<br>
+        <strong>Empleado Ced:</strong> {{ $salario->empleado->CEDULA }}<br>
         <strong>Departamento:</strong> {{ $salario->empleado->departamento->DESCRIPCION }}<br>
         <strong>Fecha:</strong> {{ $rangoFechas }}
     </p>
