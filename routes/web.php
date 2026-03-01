@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ColillaController;
+use App\Http\Controllers\CompanySettingController;
 use App\Http\Controllers\DepartamentoController;
 use App\Http\Controllers\EmpleadoController;
 use App\Http\Controllers\PlanillaController;
@@ -94,6 +95,8 @@ Route::middleware(['auth'])->group(function () {
 
         Route::get('/usuarios/{user}/editar', [UserController::class, 'edit'])->name('usuarios.edit');
         Route::put('/usuarios/{user}', [UserController::class, 'update'])->name('usuarios.update');
+        Route::get('/configuracion', [CompanySettingController::class, 'edit'])->name('configuracion.edit');
+        Route::put('/configuracion', [CompanySettingController::class, 'update'])->name('configuracion.update');
 
     });
 

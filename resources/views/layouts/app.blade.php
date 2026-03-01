@@ -30,6 +30,9 @@
                                 <a class="nav-link" href="{{ route('usuarios.index') }}">Usuarios</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="{{ route('configuracion.edit') }}">Configuracion</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{ route('planillas.index') }}">Ingreso de Planilla</a>
                             </li>
                             <li class="nav-item dropdown">

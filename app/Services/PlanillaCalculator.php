@@ -6,7 +6,7 @@ use App\Models\Empleado;
 
 class PlanillaCalculator
 {
-    const CCSS_PORCENTAJE = 0.1083;
+    // const CCSS_PORCENTAJE = 0.1083;
 
     const HORAS_BASE = 48;
 
@@ -21,11 +21,12 @@ class PlanillaCalculator
         $empleado = Empleado::findOrFail($empleadoId);
         $valorHora = $empleado->SALARIOACTUAL / self::HORAS_BASE;
         $montoBruto = ($horas + ($extras * 1.5)) * $valorHora + $incentivo;
-
+        $company = app('company');
+        $ccss_percent = $company->ccss_employee_percentage / 100;
         // 🔹 CCSS SIEMPRE SE AGREGA
         $rebajoCCSS = [
             'descripcion' => 'CCSS',
-            'monto' => round($montoBruto * self::CCSS_PORCENTAJE, 2),
+            'monto' => round($montoBruto * $ccss_percent, 2),
             'tipo' => 'PORCENTAJE',
         ];
         // dd($rebajosUsuario);

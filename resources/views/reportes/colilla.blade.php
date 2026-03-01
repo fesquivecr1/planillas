@@ -40,13 +40,15 @@
         date_format(date_sub($fechaInicial, date_interval_create_from_date_string('6 days')), 'Y-m-d') .
         ' al ' .
         $salario->FECHA;
+    $company = app('company');
+
 @endphp
 
 <body>
     <img src="{{ public_path('images/FSS_Logo.jpeg') }}" alt="Logo Empresa" style="height:80px;">
     <h3>Colilla de Pago</h3>
-    <h3>Ferreteria San Sebastian</h3>
-    <h4>Cedula: 3-101-067859</h4>
+    <h3>{{ $company->company_name }}</h3>
+    <h4>Cedula: {{ $company->legal_id }}</h4>
 
     <p>
         <strong>Empleado:</strong> {{ $salario->empleado->NOMBRE }} {{ $salario->empleado->APELLIDO }}<br>
