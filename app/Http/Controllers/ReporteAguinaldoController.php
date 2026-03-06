@@ -11,7 +11,7 @@ class ReporteAguinaldoController extends Controller
 {
     public function index()
     {
-        return view('reportes.aguinaldo_form');
+        return view('reportes.aguinaldo.form');
     }
 
     public function generar(Request $request)
@@ -44,7 +44,7 @@ class ReporteAguinaldoController extends Controller
             ->get();
 
         return view(
-            'reportes.aguinaldo_resultado',
+            'reportes.aguinaldo.resultado',
             compact('datos', 'anio')
         );
     }

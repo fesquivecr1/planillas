@@ -43,6 +43,9 @@
                                     <li><a class="dropdown-item" href="{{ route('reportes.planilla') }}">Planillas</a></li>
                                     <li><a class="dropdown-item" href="{{ route('reportes.aguinaldo') }}">Aguinaldos</a>
                                     </li>
+                                    <li><a class="dropdown-item"
+                                            href="{{ route('reportes.aguinaldo.empleado') }}">Aguinaldos por empleado</a>
+                                    </li>
                                     <li><a class="dropdown-item" href="{{ route('reportes.ccss.form') }}">CCSS</a></li>
                                 </ul>
                             </li>

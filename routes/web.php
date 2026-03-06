@@ -50,6 +50,10 @@ Route::middleware(['auth', 'role:admin,rrhh'])->group(function () {
         '/reportes/aguinaldo',
         [ReporteAguinaldoController::class, 'index']
     )->name('reportes.aguinaldo');
+    Route::get(
+        '/reportes/aguinaldo/empleado',
+        [ReporteAguinaldoEmpleadoController::class, 'index']
+    )->name('reportes.aguinaldo.empleado');
 
     Route::post(
         '/reportes/aguinaldo/generar',

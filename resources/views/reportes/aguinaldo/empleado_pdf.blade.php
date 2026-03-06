@@ -30,16 +30,27 @@
         }
     </style>
 </head>
+@php
+    $company = app('company');
+
+@endphp
 
 <body>
-
+    <img src="{{ public_path('images/FSS_Logo.jpeg') }}" alt="Logo Empresa" style="height:80px;">
+    <h3>Reporte de Aguinaldo</h3>
+    <h3>{{ $company->company_name }}</h3>
+    <h4>Cedula: {{ $company->legal_id }}</h4>
+    <h4>
+        Aguinaldo - {{ $empleado->NOMBRE }} {{ $empleado->APELLIDO }}
+        {{ $empleado->CEDULA }}
+        <br>
+        <strong>({{ $anio }}) </strong>
+    </h4>
 
 
     <div class="container">
-        <h4>
-            Aguinaldo - {{ $empleado->NOMBRE }} {{ $empleado->APELLIDO }}
-            ({{ $anio }})
-        </h4>
+
+
 
 
         <table>
@@ -53,7 +64,7 @@
                 @foreach ($mensual as $row)
                     <tr>
                         <td>{{ sprintf('%02d', $row->mes) }}/{{ $row->anio }}</td>
-                        <td class="text-end">
+                        <td class="text-right">
                             {{ number_format($row->total_mes, 2) }}
                         </td>
                     </tr>
@@ -61,8 +72,8 @@
             </tbody>
             <tfoot>
                 <tr>
-                    <th>Total</th>
-                    <th>{{ number_format($total, 2) }}</th>
+                    <th class="text-right">Total</th>
+                    <th class="text-right">{{ number_format($total, 2) }}</th>
                 </tr>
                 <tr>
                     <th>Aguinaldo</th>

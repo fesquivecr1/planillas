@@ -6,17 +6,33 @@
             Aguinaldo - {{ $empleado->NOMBRE }} {{ $empleado->APELLIDO }}
             ({{ $anio }})
         </h4>
-
-        <form method="POST" action="{{ route('reportes.aguinaldo.empleado.pdf') }}" target="_blank">
+        <br>
+        <form method="POST" action="{{ route('reportes.aguinaldo.empleado.pdf') }}">
             @csrf
-            <input type="hidden" name="empleado_id" value="{{ $empleado->CODIGO }}">
-            <input type="hidden" name="anio" value="{{ $anio }}">
+            <div class="row-cols-3 justify-center">
+                <input type="hidden" name="empleado_id" value="{{ $empleado->CODIGO }}">
+                <input type="hidden" name="anio" value="{{ $anio }}">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="Selradio" id="flexRadioDefault1" value='email'>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Enviar por correo
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="Selradio" id="flexRadioDefault2" checked
+                        value='PDF'>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        PDF pantalla
+                    </label>
+                </div>
+                <br>
 
-            <button class="btn btn-danger mb-3">
-                Exportar PDF
-            </button>
+                <button class="btn btn-danger mb-3 ">
+                    Aceptar
+                </button>
+            </div>
         </form>
-
+        <br>
         <table class="table table-bordered table-sm">
             <thead>
                 <tr>
