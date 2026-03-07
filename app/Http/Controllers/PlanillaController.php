@@ -25,7 +25,7 @@ class PlanillaController extends Controller
         DB::transaction(function () use ($request) {
             $calculator = app(\App\Services\PlanillaCalculator::class);
             foreach ($request->empleados as $empleadoId => $data) {
-
+                // dd('Primer dato', $data);
                 // Buscar o crear salario
                 $salario = Salario::firstOrCreate(
                     [
@@ -53,6 +53,7 @@ class PlanillaController extends Controller
                     'HORASLABORADAS' => $data['horas'] ?? $salario->HORASLABORADAS,
                     'HORASEXTRA' => $data['extras'] ?? $salario->HORASEXTRA,
                     'TOTALINCENTIVO' => $data['otros'] ?? $salario->TOTALINCENTIVO,
+                    'DESCINC' => $data['descinc'] ?? $salario->DESCINC,
                     'MONTOBRUTO' => $resultado['monto_bruto'],
                     'DEDUCCIONES' => $resultado['deducciones'],
 
@@ -130,6 +131,7 @@ class PlanillaController extends Controller
                 'horas' => $salario->HORASLABORADAS ?? 0,
                 'extras' => $salario->HORASEXTRA ?? 0,
                 'otros' => $salario->TOTALINCENTIVO ?? 0,
+                'descinc' => $salario->DESCINC ?? '',
                 'rebajos' => $rebajos,
             ];
         }

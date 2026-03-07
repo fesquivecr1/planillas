@@ -60,8 +60,12 @@
 
                                 {{-- Otros --}}
                                 <td>
+                                    <input type="text" class="form-control form-control-sm mb-1"
+                                        placeholder="Descripción" name="empleados[{{ $empId }}][descinc]"
+                                        value="{{ $data['descinc'] ?? '' }}">
                                     <input type="number" step="0.01" name="empleados[{{ $empId }}][otros]"
                                         value="{{ $data['otros'] }}" class="form-control form-control-sm">
+
                                 </td>
 
                                 {{-- Rebajo 1 --}}

@@ -80,8 +80,8 @@
             </td>
         </tr>
         <tr>
-            <td>Otros ingresos</td>
-            <td>-</td>
+            <td>Otros ingresos :<strong> {{ $salario->DESCINC ?? ' ' }}</strong> </td>
+            <td></td>
             <td>{{ number_format($salario->TOTALINCENTIVO, 2) }}</td>
         </tr>
         <tr>

@@ -21,7 +21,8 @@ class Salario extends Model
         'AHORRO',
         'DEPARTAMENTO',
         'VACACIONES',
-        'DIASVAC'
+        'DIASVAC',
+        'DESCINC'
     ];
 
     public function empleado()
