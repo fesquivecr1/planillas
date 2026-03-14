@@ -12,7 +12,8 @@ class CompanySetting extends Model
         'address',
         'phone',
         'logo_path',
-        'ccss_employee_percentage',
+        'ccss_employeeR_percentage',
+        'ccss_employeeP_percentage',
         'ccss_employer_percentage',
     ];
 }

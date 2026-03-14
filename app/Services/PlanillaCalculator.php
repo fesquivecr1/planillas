@@ -22,7 +22,12 @@ class PlanillaCalculator
         $valorHora = $empleado->SALARIOACTUAL / self::HORAS_BASE;
         $montoBruto = ($horas + ($extras * 1.5)) * $valorHora + $incentivo;
         $company = app('company');
-        $ccss_percent = $company->ccss_employee_percentage / 100;
+        if ($empleado->TIPO) {
+            $ccss_percent = $company->ccss_employeeP_percentage / 100;
+        } else {
+            $ccss_percent = $company->ccss_employeeR_percentage / 100;
+        }
+
         // 🔹 CCSS SIEMPRE SE AGREGA
         $rebajoCCSS = [
             'descripcion' => 'CCSS',

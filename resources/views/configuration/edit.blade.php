@@ -25,11 +25,15 @@
                     <input type="text" name="address" value="{{ $setting->address }}" class="form-control">
                 </div>
                 <div class="mb-3">
-                    <label>% CCSS Empleado</label>
-                    <input type="number" step="0.01" name="ccss_employee_percentage"
-                        value="{{ $setting->ccss_employee_percentage }}" class="form-control">
+                    <label>% CCSS Empleado Regular</label>
+                    <input type="number" step="0.01" name="ccss_employeeR_percentage"
+                        value="{{ $setting->ccss_employeeR_percentage }}" class="form-control">
                 </div>
-
+                <div class="mb-3">
+                    <label>% CCSS Empleado Pensionado</label>
+                    <input type="number" step="0.01" name="ccss_employeeP_percentage"
+                        value="{{ $setting->ccss_employeeP_percentage }}" class="form-control">
+                </div>
                 <div class="mb-3 visually-hidden">
                     <label>% CCSS Patrono</label>
                     <input type="number" step="0.01" name="ccss_employer_percentage"

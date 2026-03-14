@@ -2,16 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Empleado;
 use App\Models\Departamento;
-
+use App\Models\Empleado;
+use Illuminate\Http\Request;
 
 class EmpleadoController extends Controller
 {
     public function __construct()
     {
-       // $this->middleware('role:admin,rrhh');
+        // $this->middleware('role:admin,rrhh');
     }
 
     public function index(Request $request)
@@ -32,6 +31,7 @@ class EmpleadoController extends Controller
     public function create()
     {
         $departamentos = Departamento::orderBy('DESCRIPCION')->get();
+
         return view('empleados.create', compact('departamentos'));
     }
 
@@ -41,7 +41,7 @@ class EmpleadoController extends Controller
             'CEDULA' => 'required|unique:empleados,CEDULA',
             'NOMBRE' => 'required',
             'APELLIDO' => 'required',
-            'DEPARTAMENTO' => 'required|exists:departamentos,CODIGO'
+            'DEPARTAMENTO' => 'required|exists:departamentos,CODIGO',
         ]);
 
         Empleado::create($request->all());
@@ -53,15 +53,16 @@ class EmpleadoController extends Controller
     public function edit(Empleado $empleado)
     {
         $departamentos = Departamento::orderBy('DESCRIPCION')->get();
+
         return view('empleados.edit', compact('empleado', 'departamentos'));
     }
 
     public function update(Request $request, Empleado $empleado)
     {
         $request->validate([
-            'CEDULA' => 'required|unique:empleados,CEDULA,' . $empleado->CODIGO . ',CODIGO',
+            'CEDULA' => 'required|unique:empleados,CEDULA,'.$empleado->CODIGO.',CODIGO',
             'NOMBRE' => 'required',
-            'APELLIDO' => 'required'
+            'APELLIDO' => 'required',
         ]);
 
         $empleado->update($request->all());

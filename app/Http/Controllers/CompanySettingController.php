@@ -19,7 +19,8 @@ class CompanySettingController extends Controller
         $setting = CompanySetting::first();
 
         $request->validate([
-            'ccss_employee_percentage' => 'required|numeric|min:0|max:100',
+            'ccss_employeeP_percentage' => 'required|numeric|min:0|max:100',
+            'ccss_employeeR_percentage' => 'required|numeric|min:0|max:100',
             'ccss_employer_percentage' => 'required|numeric|min:0|max:100',
         ]);
         //  dd($request->all());
