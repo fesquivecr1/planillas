@@ -15,5 +15,6 @@ class CompanySetting extends Model
         'ccss_employeeR_percentage',
         'ccss_employeeP_percentage',
         'ccss_employer_percentage',
+        'ccss_domestic_percentage',
     ];
 }

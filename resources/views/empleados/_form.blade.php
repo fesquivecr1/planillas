@@ -61,10 +61,11 @@
             <textarea name="DIRECCION">{{ old('DIRECCION', $empleado->DIRECCION ?? '') }}</textarea>
         </div>
         <div class="mb-3">
-            <label class="form-label">Estado</label>
+            <label class="form-label">CCSS</label>
             <select name="TIPO">
                 <option value="0" @selected(old('TIPO', $empleado->TIPO ?? 0) == 0)>REGULAR</option>
                 <option value="1" @selected(old('TIPO', $empleado->TIPO ?? 0) == 1)>PENSIONADO</option>
+                <option value="2" @selected(old('TIPO', $empleado->TIPO ?? 0) == 2)>DOMESTICO</option>
             </select>
         </div>
 

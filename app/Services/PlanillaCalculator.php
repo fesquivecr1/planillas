@@ -22,8 +22,10 @@ class PlanillaCalculator
         $valorHora = $empleado->SALARIOACTUAL / self::HORAS_BASE;
         $montoBruto = ($horas + ($extras * 1.5)) * $valorHora + $incentivo;
         $company = app('company');
-        if ($empleado->TIPO) {
+        if ($empleado->TIPO === 1) {
             $ccss_percent = $company->ccss_employeeP_percentage / 100;
+        } elseif ($empleado->TIPO === 2) {
+            $ccss_percent = $company->ccss_domestic_percentage / 100;
         } else {
             $ccss_percent = $company->ccss_employeeR_percentage / 100;
         }

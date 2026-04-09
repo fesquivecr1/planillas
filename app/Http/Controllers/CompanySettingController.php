@@ -22,6 +22,7 @@ class CompanySettingController extends Controller
             'ccss_employeeP_percentage' => 'required|numeric|min:0|max:100',
             'ccss_employeeR_percentage' => 'required|numeric|min:0|max:100',
             'ccss_employer_percentage' => 'required|numeric|min:0|max:100',
+            'ccss_domestic_percentage' => 'required|numeric|min:0|max:100',
         ]);
         //  dd($request->all());
         $setting->update($request->all());

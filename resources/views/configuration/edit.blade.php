@@ -34,6 +34,11 @@
                     <input type="number" step="0.01" name="ccss_employeeP_percentage"
                         value="{{ $setting->ccss_employeeP_percentage }}" class="form-control">
                 </div>
+                <div class="mb-3">
+                    <label>% CCSS Empleado domestico</label>
+                    <input type="number" step="0.01" name="ccss_domestic_percentage"
+                        value="{{ $setting->ccss_domestic_percentage }}" class="form-control">
+                </div>
                 <div class="mb-3 visually-hidden">
                     <label>% CCSS Patrono</label>
                     <input type="number" step="0.01" name="ccss_employer_percentage"
