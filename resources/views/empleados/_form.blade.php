@@ -40,7 +40,7 @@
 
         <div class="mb-3">
             <label class="form-label">Salario actual</label>
-            <input class="form-control" type="number" step="1000" name="SALARIOACTUAL"
+            <input class="form-control" type="number" step="0.010" name="SALARIOACTUAL"
                 value="{{ old('SALARIOACTUAL', $empleado->SALARIOACTUAL ?? '') }}">
         </div>
 
