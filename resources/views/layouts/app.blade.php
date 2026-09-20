@@ -10,13 +10,15 @@
     <!-- Bootstrap CDN (simple y rápido) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel='icon' type='image/x-icon' href="{{ asset('images/FSS_Logo 64.png') }}">
+    <!-- Cargar Bootstrap Icons mediante CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
-<body>
+<body class="bg-body-tertiary ">
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Planillas</a>
+            <a class="navbar-brand" href="{{ route('dashboard') }}">Planillas</a>
 
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -94,6 +96,8 @@
                 </ul>
             </div>
         @endif
+
+
 
         {{-- Contenido --}}
         @yield('content')
